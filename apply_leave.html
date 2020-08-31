@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Leave management system</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/png" href="#">
+  <link rel="stylesheet" href="./style.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="grid">
+    <header class="header">
+      <i class="fas fa-bars header__menu"></i>
+      <div class="header__search">
+        <input class="header__input" placeholder="Search..." />
+      </div>
+      <div class="header__avatar">
+        <div class="dropdown">
+          <ul class="dropdown__list">
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="far fa-user"></i></span>
+              <span class="dropdown__title">my profile</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-clipboard-list"></i></span>
+              <span class="dropdown__title">my account</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-sign-out-alt"></i></span>
+              <a href="login.html"> <span class="dropdown__title">log out</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidenav">
+
+      <div class="sidenav__profile">
+        <a href='index.html'>
+          <div class="sidenav__profile-avatar"></div>
+        </a>
+        <div class="sidenav__profile-title text-light">User</div>
+      </div>
+      <div class="row row--align-v-center row--align-h-center">
+        <ul class="navList">
+          <li class="navList__heading">Functionalities<i class="far fa-file-alt"></i></li>
+          <li>
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-briefcase-medical"></i></span>
+              <span class="navList__subheading-title">Leave Management</span>
+            </div>
+            <ul class="subList subList--hidden">
+              <a href="apply_leave.html">
+                <li class="subList__item">Apply for a Leave</li>
+              </a>
+              <a href="approve_table.html">
+                <li class="subList__item">Approve Leave requests</li>
+              </a>
+            </ul>
+          </li>
+
+
+
+    </aside>
+
+    <main class="main">
+      <div class="main-header" style="height: 150px;">
+        <div class="main-header__intro-wrapper">
+          <div class="main-header__welcome">
+            <div class="main-header__welcome-title text-light">Apply for a Leave</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <form class="pure-form pure-form-stacked">
+              <fieldset>
+                <div class="position-relative form-group">
+                  <label for="exampleCustomSelect" class="">Leave type</label>
+                  <select type="select" id="exampleCustomSelect" name="customSelect" class="custom-select">
+                    <option value="">Select</option>
+                    <option>Regular</option>
+                    <option>On Duty</option>
+                    <option>Medical</option>
+                  </select>
+                </div>
+                <br>
+                <div class="position-relative form-group">
+                  <label for="exampleCustomSelect" class="">From</label>
+                  <input style="font-size: 11px" type="date" name="leavefromdate" />
+                  <input style="font-size: 11px" type="time" name="leavefromtime" />
+                </div>
+                <br>
+                <div class="position-relative form-group">
+                  <label for="exampleCustomSelect" class="">To</label>
+                  <input style="font-size: 11px" type="date" name="leavetodate" />
+                  <input style="font-size: 11px" type="time" name="leavetoime" />
+                </div>
+                <br>
+                <div class="position-relative form-group">
+                  <label for="exampleCustomSelect" class="">Reason</label>
+                  <input placeholder="default" type="text" class="mb-2 form-control">
+                </div>
+                <br>
+                <div class="position-relative form-group">
+                  <label for="exampleFile" class="">Attach proof(OD form/MC) if applicable</label>
+                  <input name="file" id="exampleFile" type="file" class="form-control-file" multiple>
+                </div>
+                <br>
+                <div class="position-relative form-group">
+                  <label for="exampleCustomSelect" class="">By submitting this leave application, you are accepting that
+                    the reason for this leave application is valid and if that's not the case, you are liable to
+                    punishment</label>
+                  <div>
+                    <div class="custom-radio custom-control">
+                      <input type="radio" id="exampleCustomRadio" name="customRadio" class="custom-control-input">
+                      <label class="custom-control-label" for="exampleCustomRadio">Agree</label>
+                    </div>
+                    <div class="custom-radio custom-control">
+                      <input type="radio" id="exampleCustomRadio2" name="customRadio" class="custom-control-input">
+                      <label class="custom-control-label" for="exampleCustomRadio2">Disagree</label>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <button class="mt-1 btn btn-primary">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  </main>
+
+
+  </div>
+  <!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+  <script src='https://www.amcharts.com/lib/3/amcharts.js'></script>
+  <script src='https://www.amcharts.com/lib/3/serial.js'></script>
+  <script src='https://www.amcharts.com/lib/3/themes/light.js'></script>
+  <script src="./script.js"></script>
+
+
+
+</body>
+
+</html>
