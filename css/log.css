@@ -36,7 +36,7 @@ input {
 
 }
 .login_form_page{
-	background-image: url("D:/css-grid-modern-responsive-dashboard/dist/bg-01.jpg");
+	background-image: url("../images/bg-01.jpg");
 	width: 100%;  
 	min-height: 100vh;
 
