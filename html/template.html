@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Management System</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="#">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="grid">
+    <header class="header">
+      <i class="fas fa-bars header__menu"></i>
+      <div class="header__search">
+        <input class="header__input" placeholder="Search..." />
+      </div>
+      <div class="header__avatar">
+        <div class="dropdown">
+          <ul class="dropdown__list">
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="far fa-user"></i></span>
+              <span class="dropdown__title">My profile</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-clipboard-list"></i></span>
+              <span class="dropdown__title">My account</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-sign-out-alt"></i></span>
+              <a href="./login.html"> <span class="dropdown__title">Log out</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <aside class="sidenav">
+
+      <div class="sidenav__profile">
+          <div class="sidenav__profile-avatar"></div>
+        <div class="sidenav__profile-title text-light">User</div>
+      </div>
+      <div class="row row--align-v-center row--align-h-center">
+        <ul class="navList">
+          <li class="navList__heading">Functionalities<i class="far fa-file-alt"></i></li>
+          <li>
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-briefcase-medical"></i></span>
+              <span class="navList__subheading-title">Leave Management</span>
+            </div>
+            <ul class="subList subList--hidden">
+              <a href="./apply_leave.html">
+                <li class="subList__item">Apply for a Leave</li>
+              </a>
+              <a href="./approve_leave.html">
+                <li class="subList__item">Approve Leave requests</li>
+              </a>
+              <a href="./view_leave.html">
+                <li class="subList__item">View Leave requests</li>
+              </a>
+              <a href="./stud_leave_report.html">
+                <li class="subList__item">View Student Leave report</li>
+              </a>
+              
+              <a href="./fac_leave_report.html">
+                <li class="subList__item">View Faculty Leave report</li>
+              </a>
+             
+            </ul>
+          </li>
+          <li>
+            <a href='./calendar.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-calendar"></i></span>
+              <span class="navList__subheading-title">Calendar</span>
+            </div>
+          </a>
+          <a href='./new_analytics.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-chart-bar"></i></span>
+              <span class="navList__subheading-title">Analytics</span>
+            </div>
+          </a>
+
+          <a href='./login.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-arrow-left"></i></span>
+              <span class="navList__subheading-title">Log Out</span>
+            </div>
+          </a>
+          </li>
+
+
+    </aside>
+    <main class="main">
+
+
+      <!--Light this region up with your content-->
+
+
+    </main>	
+
+
+  </div>
+  <!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+  <script src='https://www.amcharts.com/lib/3/amcharts.js'></script>
+  <script src='https://www.amcharts.com/lib/3/serial.js'></script>
+  <script src='https://www.amcharts.com/lib/3/themes/light.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+      <title> Home Page</title>
+      <style> body{
+        margin: 0;
+        padding: 0;
+        
+        font-family: sans-serif;
+		background-image: url("bg-01.jpg");
+
+  /* Full height */
+        height: 100%; 
+
+  /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .login-box{
+        width: 320px;
+        height: 950px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        box-sizing: border-box;
+        padding: 70px 30px;
+    }
+    .avatar{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+    }
+    h1{
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+    }
+    .login-box input[type="submit"]
+    {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #1c8adb;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+    .login-box input[type="submit"]:hover
+    {
+        cursor: pointer;
+        background: #39dc79;
+        color: #000;
+    }
+    
+    .login-box a{
+        text-decoration: none;
+        font-size: 14px;
+        color: #fff;
+    }
+    .login-box a:hover
+    {
+        color: #39dc79;
+    }
+</style>    
+      
+          
+  </head>
+   <body>
+    <script>
+	   function myfunc(){
+	     var a = document.getElementById("passwords").value;
+		 var b = document.getElementById("passwordss").value;
+		 var no= document.getElementById("number1").value;
+		 var fname= document.getElementById("fname").value;
+		 var email= document.getElementById("mail").value;
+		 var dob= document.getElementById("dob").value;
+		 var cid= document.getElementById("cid").value;
+		 if(a==""){
+		    document.getElementById("messages").innerHTML="* * Please fill password ";
+			return false;
+			}
+		 if(a.lenght < 8){
+		    document.getElementById("messages").innerHTML="* * Please set password with atleast 8 characters ";
+			return false;
+			}
+		 if(a.lenght > 25){
+		    document.getElementById("messages").innerHTML="* * Password lenght must be less than 25  ";
+			return false;
+			}
+		 if(a!=b){
+		    document.getElementById("messages").innerHTML="<span style='color:red;'>* * Passwords does not match</span> ";
+			return false;
+			}
+		if(no.length > 10){
+		    document.getElementById("messagesss").innerHTML="<span style='color:red;'>* * Invalid Number</span> ";
+			return false;
+		
+			}
+		if(no.length<10){
+		    document.getElementById("messagesss").innerHTML="<span style='color:red;'>* * Invalid Number</span> ";
+			return false;
+		
+			}
+		if(fname==""){
+		    document.getElementById("fname").innerHTML="<span style='color:red;'>* * Please fill First Name ";
+			return false;
+			}
+		if(email==""){
+		    document.getElementById("email").innerHTML="* * Please fill Email-ID ";
+			return false;
+			}
+		if(dob==""){
+		    document.getElementById("dob").innerHTML="* * This field cannot be empty";
+			return false;
+			}
+		if(cid==""){
+		    document.getElementById("cid").innerHTML="* * This field needs to be filled  ";
+			return false;
+			}
+			
+		}
+	</script>
+		 
+	   
+	   <div class="login-box">
+      <img src="avatar.png" class="avatar">
+      <h1>Register Here</h1>
+      <form onsubmit="return myfunc()" action = "/register" method = "POST">
+         <p style="font-size:20px;">First name</p>
+         <input type="text" name="fname" class="form-control" placeholder="Enter firstname" id="fname">
+		 <span id="fname"> </span>
+         <p style="font-size:20px;">Last name</p>
+         <input type="text" name="lname" class="form-control" placeholder="Enter lastname" id="lname">
+         <p style="font-size:20px;">Contact number</p>
+         <input type="number" name="no" class="form-control"  placeholder="Enter phonenumber" id="number1">
+		 <span id="messagesss"> </span>
+         <p style="font-size:20px;">Email id </p>
+         <input type="text" name="email" class="form-control" placeholder="Enter email" id="mail">
+		 <span id="email"> </span>
+         <p style="font-size:20px;">Password</p>
+         <input type="password" name="password" class="form-control" id="passwords" placeholder=" Enter your password" id="password">
+		 <span id="messages"> </span>
+		 <p style="font-size:20px;">Confirm Password</p>
+         <input type="password" name="rpassword" class="form-control" id="passwordss" placeholder=" Enter your password" id="password">
+		 <span id="messagess"> </span>
+         <p style="font-size:20px;">Enter Date of birth</p>
+         <input type="date" id="dob" class="form-control" name="dob">
+		 <span id="dob"> </span>
+         <p style="font-size:20px;">Enter College ID</p>
+         <input type="text" name="cid" class="form-control" placeholder="Enter college ID" id="cid">
+		 <span id="cid"> </span>
+         <p style="font-size:20px;">Are you a faculty or student</p>
+         <input type="radio" id="Faculty" class="form-control"  name="typef" value="Faculty">
+         <label style="font-size:20px;" for="Faculty">Faculty</label><br>
+         <input type="radio" id="Student" class="form-control"  name="typef" value="Student">
+         <label style="font-size:20px;" for="Student">Student</label><br>
+         
+         <input type="submit" id="submit" name="submit" class="form-control"  value="register">
+      </form>
+      </div>
+   </body>
+</html>

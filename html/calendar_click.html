@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Management System</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="#">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.3.2,npm/fullcalendar@5.3.2/main.min.js,npm/chart.js@2.9.3/dist/Chart.bundle.min.js,npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.3.2/main.min.css,npm/fullcalendar@5.3.2/main.min.css,npm/chart.js@2.9.3/dist/Chart.min.css">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 50px;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {background-color:#f5f5f5;}
+    </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="grid">
+    <header class="header">
+      <i class="fas fa-bars header__menu"></i>
+      <div class="header__search">
+        <input class="header__input" placeholder="Search..." />
+      </div>
+      <div class="header__avatar">
+        <div class="dropdown">
+          <ul class="dropdown__list">
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="far fa-user"></i></span>
+              <span class="dropdown__title">My profile</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-clipboard-list"></i></span>
+              <span class="dropdown__title">My account</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-sign-out-alt"></i></span>
+              <a href="login.html"> <span class="dropdown__title">Log out</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidenav">
+
+      <div class="sidenav__profile">
+          <div class="sidenav__profile-avatar"></div>
+        <div class="sidenav__profile-title text-light">User</div>
+      </div>
+      <div class="row row--align-v-center row--align-h-center">
+        <ul class="navList">
+          <li class="navList__heading">Functionalities<i class="far fa-file-alt"></i></li>
+          <li>
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-briefcase-medical"></i></span>
+              <span class="navList__subheading-title">Leave Management</span>
+            </div>
+            <ul class="subList subList--hidden">
+              <a href="./apply_leave.html">
+                <li class="subList__item">Apply for a Leave</li>
+              </a>
+              <a href="./approve_leave.html">
+                <li class="subList__item">Approve Leave requests</li>
+              </a>
+              <a href="./view_leave.html">
+                <li class="subList__item">View Leave requests</li>
+              </a>
+              <a href="./stud_leave_report.html">
+                <li class="subList__item">View Student Leave report</li>
+              </a>
+              
+              <a href="./fac_leave_report.html">
+                <li class="subList__item">View Faculty Leave report</li>
+              </a>
+             
+            </ul>
+          </li>
+          <li>
+            <a href='./calendar.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-calendar"></i></span>
+              <span class="navList__subheading-title">Calendar</span>
+            </div>
+          </a>
+          <a href='./new_analytics.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-chart-bar"></i></span>
+              <span class="navList__subheading-title">Analytics</span>
+            </div>
+          </a>
+
+          <a href='./login.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-arrow-left"></i></span>
+              <span class="navList__subheading-title">Log Out</span>
+            </div>
+          </a>
+          </li>
+
+
+    </aside>
+    <div style="text-align:center;" > 
+        <h2>Calendar Inferences</h2>
+        <div>
+        <table>
+            <h4>Details about absentees</h4>
+
+            <tr>
+              <th>Student Name</th>
+              <th>Class</th>
+              <th>No of Hrs</th>
+            </tr>
+            <tr>
+              <td>Peter</td>
+              <td>3rd Year CSE D</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Lois</td>
+              <td>1st Year CSE B</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Joe</td>
+              <td>2nd Year CSE A</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Cleveland</td>
+              <td>4th Year CSE E</td>
+              <td>4</td>
+            </tr>
+        </div>
+          </table>
+          
+    <main class="main" style="width: 300px; height: 300px; margin-left: 20%; display: flex; background-color: white;">
+   
+
+        <canvas id="myChart" width="100" height="100"  style="margin-left:10%;"></canvas>
+        <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['3rd year CSE D', '1st year CSE B', '2nd year CSE E', '1st year Mech D', '4th year CSE A'],
+                datasets: [{
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+<canvas id="myChart2" width="100" height="100"  style="margin-left: 30%;"></canvas>
+<script>
+var ctx = document.getElementById('myChart2');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: 'Good day for a test?',
+            data: [95,55,60,40, 80,75],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+    </main>
+
+  
+    </div>
+    
+    
+    
+  </div>
+  <!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+  <script src='https://www.amcharts.com/lib/3/amcharts.js'></script>
+  <script src='https://www.amcharts.com/lib/3/serial.js'></script>
+  <script src='https://www.amcharts.com/lib/3/themes/light.js'></script>
+  <script src="../javascript/script.js"></script>
+
+</body>
+
+</html>

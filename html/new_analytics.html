@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<style>
+	body 
+	{
+  		background-image: url('bg1.jpeg');
+  		background-repeat: no-repeat;
+  		background-size: 100% 100%;
+	}
+    table
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th, td 
+    {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    caption
+    {
+    	font-size: 20px;
+    }
+</style>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Number of Absentees', 'Number of Students/Employees present'],
+          ['January',120,420],
+          ['February',260,280],
+          ['March',  185,355],
+          ['April',  285,255]
+        ]);
+
+        var options = {
+          title: 'Student/Employee Count in Organisation',
+          curveType: 'line',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+ </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-amber.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Leave Management System</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="#">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="grid">
+    <header class="header">
+      <i class="fas fa-bars header__menu"></i>
+      <div class="header__search">
+        <input class="header__input" placeholder="Search..." />
+      </div>
+      <div class="header__avatar">
+        <div class="dropdown">
+          <ul class="dropdown__list">
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="far fa-user"></i></span>
+              <span class="dropdown__title">My profile</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-clipboard-list"></i></span>
+              <span class="dropdown__title">My account</span>
+            </li>
+            <li class="dropdown__list-item">
+              <span class="dropdown__icon"><i class="fas fa-sign-out-alt"></i></span>
+              <a href="login.html"> <span class="dropdown__title">Log out</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <aside class="sidenav">
+
+      <div class="sidenav__profile">
+          <div class="sidenav__profile-avatar"></div>
+        <div class="sidenav__profile-title text-light">User</div>
+      </div>
+      <div class="row row--align-v-center row--align-h-center">
+        <ul class="navList">
+          <li class="navList__heading">Functionalities<i class="far fa-file-alt"></i></li>
+          <li>
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-briefcase-medical"></i></span>
+              <span class="navList__subheading-title">Leave Management</span>
+            </div>
+            <ul class="subList subList--hidden">
+              <a href="./apply_leave.html">
+                <li class="subList__item">Apply for a Leave</li>
+              </a>
+              <a href="./approve_leave.html">
+                <li class="subList__item">Approve Leave requests</li>
+              </a>
+              <a href="./view_leave.html">
+                <li class="subList__item">View Leave requests</li>
+              </a>
+              <a href="./stud_leave_report.html">
+                <li class="subList__item">View Student Leave report</li>
+              </a>
+              
+              <a href="./fac_leave_report.html">
+                <li class="subList__item">View Faculty Leave report</li>
+              </a>
+             
+            </ul>
+          </li>
+          <li>
+            <a href='./calendar.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-calendar"></i></span>
+              <span class="navList__subheading-title">Calendar</span>
+            </div>
+          </a>
+          <a href='./new_analytics.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-chart-bar"></i></span>
+              <span class="navList__subheading-title">Analytics</span>
+            </div>
+          </a>
+
+          <a href='./login.html'>
+
+            <div class="navList__subheading row row--align-v-center">
+              <span class="navList__subheading-icon"><i class="fas fa-arrow-left"></i></span>
+              <span class="navList__subheading-title">Log Out</span>
+            </div>
+          </a>
+          </li>
+
+
+    </aside>
+    <main class="main">
+		<div class="w3-third w3-section">
+            <div class="w3-card-4">
+              <div class="w3-container w3-green">
+                <h4>Number of Students/Employees who applied for leave</h4>
+                <h1>12</h1>
+              </div>
+            </div>
+          </div>
+          <div class="w3-third w3-section">
+            <div class="w3-card-4">
+              <div class="w3-container w3-blue">
+                <h4>Number of Students/Employees who are currently absent </h4>
+                <h1>46</h1>
+              </div>
+            </div>
+          </div>
+          <div class="w3-third w3-section">
+            <div class="w3-card-4">
+              <div class="w3-container w3-orange">
+                <h4>Total number of Students/Employees in Organisation</h4>
+                <h1>540</h1>
+              </div>
+            </div>
+          </div>
+          <br><br><br><br><br><br><br><br><br>
+          <div id="curve_chart" style="width: 900px; height: 500px; margin: 0 auto"></div>
+          <br><br>
+          <table border="1">
+          <caption>Students who previously took leave</caption>
+          <thead>
+              <th>S.No</th>
+              <th>Name Of Student</th>
+              <th>Date Applied For</th>
+              <th>Number Of Days</th>
+          </thead>
+          <tr>
+              <td>1</td>
+              <td>Vikram</td>
+              <td>10/09/2020</td>
+              <td>4</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>V Indra Kumar</td>
+              <td>14/09/2020</td>
+              <td>1</td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>Srinath R</td>
+              <td>08/08/2020</td>
+              <td>2</td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>R Varadha Ramanujam</td>
+              <td>02/08/2020</td>
+              <td>2</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>B Jyotsna</td>
+              <td>06/08/2020</td>
+              <td>1</td>
+          </tr>
+      </table>
+      <br><br>
+
+    </main>
+
+
+  </div>
+  <!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+  <script src='https://www.amcharts.com/lib/3/amcharts.js'></script>
+  <script src='https://www.amcharts.com/lib/3/serial.js'></script>
+  <script src='https://www.amcharts.com/lib/3/themes/light.js'></script>
+  <script src="../javascript/script.js"></script>
+
+</body>
+
+</html>
