@@ -93,3 +93,9 @@ function setSidenavCloseListener() {
     toggleClass(gridEl, GRID_NO_SCROLL_CLASS);
   });
 }
+
+//function used by approve button
+function appr()
+{
+    
+}
