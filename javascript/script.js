@@ -97,5 +97,20 @@ function setSidenavCloseListener() {
 //function used by approve button
 function appr()
 {
-    
+    const button = document.getElementById('approve_1');
+    var today = new Date();
+    var date = new Date(document.getElementById('applied_from').value);
+    if(today > date)
+      button.disable = true;
+}
+
+//function used by cancel button
+function cancel()
+{
+  const button = document.getElementById('cancel_1');
+    var today = new Date();
+    var date = new Date(document.getElementById('applied_from').value);
+    var status = document.getElementById('status').value;
+    if(today > date && status == "issued")
+      button.disable = true;
 }
