@@ -1,4 +1,21 @@
 <!DOCTYPE HTML>
+<script>
+	function validate()
+	{
+		var email_regex=/^([A-Za-z\_])+([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+		var alpha_numeric_regex=/^[A-Za-z]+[0-9]+[A-Za-z]/;
+		var bt=document.getElementById("un")
+		if (email_regex.test(bt.value) || alpha_numeric_regex.test(bt.value))  
+            return true;
+        else
+        {
+        	alert('Invalid Username');
+        	bt.value="";
+        	return false;
+        }
+        	
+	}
+</script>
 <html>
 	<head>
 		<title>Login Page</title>
@@ -7,7 +24,7 @@
 	<body>
 		<div class="login_form_page">
 			<div class="login_container_wrap">
-				<form class="Sign_In_Form" action="./index.html">
+				<form class="Sign_In_Form" onsubmit="return validate();" action="./index.html">
 					<span class="Sign_In_Text">
 						Sign In 
 					</span>
@@ -17,7 +34,7 @@
 							Username
 					</span>
 					<div class="input_box">
-						<input class="input_box_text" type="text" name="username" >
+						<input id="un" class="input_box_text" type="text" name="username" >
 					</div>
 					<br>
 					<span class="Text1">
@@ -29,8 +46,9 @@
 					<br>
 					<br>
 					<div class="btn-container">
-						<button class="login-form-btn">
-								Sign In
+						<!-- <input value="Sign In" type="submit" class="login-form-btn" onclick="validate();"/> -->
+						<button id=sign_in class="login-form-btn">
+							Sign In
 						</button>
 					</div>	
 					<br>

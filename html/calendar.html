@@ -19,7 +19,37 @@
     document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth'
+        initialView: 'dayGridMonth',
+        dateClick: function(info) {
+          window.location.href='./calendar_click.html'
+
+      },
+      events: [
+    { 
+      title: 'Max Attd% (76%)', 
+      start: '2020-09-11' 
+    },
+    { 
+      title: 'Max Attd% (95%)', 
+      start: '2020-09-07' 
+    },    { 
+      title: 'Max Attd% (93%)', 
+      start: '2020-09-09' 
+    },    { 
+      title: 'Max Attd% (100%)', 
+      start: '2020-09-14' 
+    },    { 
+      title: 'Max Attd% (100%)', 
+      start: '2020-09-21' 
+    },    { 
+      title: 'Max Attd% (60%)', 
+      start: '2020-09-16' 
+    },    { 
+      title: 'Max Attd% (85%)', 
+      start: '2020-09-18' 
+    },
+  ]
+
       });
       calendar.render();
     });
@@ -116,7 +146,6 @@
 
 
     </aside>
-<a href='calendar_click.html'>
     <main class="main" style="background-color: white;">
    
 
@@ -125,7 +154,6 @@
 
 
     </main>
-  </a>
 
   </div>
   <!-- partial -->

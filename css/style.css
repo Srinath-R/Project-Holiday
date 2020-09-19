@@ -315,6 +315,21 @@ a {
   transition: all .2s;
 }
 
+
+button{
+  position: relative;
+  display: block;
+  color: black;
+  font-size: 14px;
+  font-family: "montserrat";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid #ff7675;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
 .navList__subheading:hover {
   background-color: #303753;
   cursor: pointer;

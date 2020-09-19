@@ -10,6 +10,49 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="shortcut icon" type="image/png" href="#">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      margin-left: 30%;
+      margin-top: 10%;
+      width: 50%; /* Full width */
+      height: 50%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    </style>
 
 </head>
 
@@ -32,9 +75,9 @@
               <span class="dropdown__icon"><i class="fas fa-clipboard-list"></i></span>
               <span class="dropdown__title">My account</span>
             </li>
-            <li class="dropdown__list-item">
-              <span class="dropdown__icon"><i class="fas fa-sign-out-alt"></i></span>
-              <a href="./login.html"> <span class="dropdown__title">Log out</span></a>
+            <li class="dropdown__list-item" id='myBtn' >
+              <span class="dropdown__icon"><i class="fas fa-sign-out-alt" ></i></span>
+            <span class="dropdown__title" >Log out</span>
             </li>
           </ul>
         </div>
@@ -112,7 +155,7 @@
           </div>
           <div class="quickview">
             <div class="quickview__item">
-              <div class="quickview__item-total">41</div>
+              <div class="quickview__item-total">5</div>
               <div class="quickview__item-description">
                 <i class="far fa-calendar-alt"></i>
                 <span class="text-light">Requests</span>
@@ -131,8 +174,43 @@
 
 
     </main>	
+    <div id="myModal" class="modal">
 
-
+      <!-- Modal content -->
+      <div class="modal-content" style="text-align: center;">
+        <span class="close">&times;</span>
+        <p>5 requests pending for approval</p>
+        <a href='./login.html'><button style="margin-left: 35%;">Ignore</button></a>
+      </div>
+    
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
   </div>
   <!-- partial -->
   <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
